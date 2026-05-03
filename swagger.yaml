@@ -1,0 +1,738 @@
+openapi: 3.0.3
+info:
+  title: ReadersHub API
+  version: 1.0.0
+  description: |
+    API documentation for the ReadersHub backend.
+    Complete CRUD operations for Books, Users, Authors, Movies, and Reviews.
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: fail
+        message:
+          type: string
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        data:
+          type: object
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        token:
+          type: string
+        data:
+          type: object
+          properties:
+            user:
+              $ref: "#/components/schemas/User"
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        active:
+          type: boolean
+    UserSignup:
+      type: object
+      required:
+        - name
+        - email
+        - password
+        - passwordConfirm
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        passwordConfirm:
+          type: string
+          format: password
+    UserLogin:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+    PasswordUpdate:
+      type: object
+      required:
+        - currentPassword
+        - newPassword
+        - newPasswordConfirm
+      properties:
+        currentPassword:
+          type: string
+          format: password
+        newPassword:
+          type: string
+          format: password
+        newPasswordConfirm:
+          type: string
+          format: password
+    Book:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        titleSlug:
+          type: string
+        writer:
+          type: string
+        genre:
+          type: string
+        plot:
+          type: string
+        pages:
+          type: number
+        rating:
+          type: number
+          format: float
+        numberOfReviews:
+          type: number
+        keyThemes:
+          type: array
+          items:
+            type: string
+        active:
+          type: boolean
+        author:
+          type: string
+        estimatedReadHours:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    BookCreate:
+      type: object
+      required:
+        - title
+        - writer
+        - genre
+        - plot
+        - pages
+        - imageCover
+      properties:
+        title:
+          type: string
+        writer:
+          type: string
+        genre:
+          type: string
+        plot:
+          type: string
+        pages:
+          type: number
+        keyThemes:
+          type: array
+          items:
+            type: string
+        imageCover:
+          type: string
+    Review:
+      type: object
+      properties:
+        _id:
+          type: string
+        review:
+          type: string
+        rating:
+          type: number
+          format: float
+        book:
+          type: string
+        user:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    ReviewCreate:
+      type: object
+      required:
+        - review
+        - rating
+      properties:
+        review:
+          type: string
+        rating:
+          type: number
+          format: float
+    Author:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        bio:
+          type: string
+        books:
+          type: array
+          items:
+            type: string
+    Movie:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        director:
+          type: string
+        genre:
+          type: string
+        releaseYear:
+          type: number
+paths:
+  /api/v1/users/signin:
+    post:
+      tags: [Auth]
+      summary: Sign up a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserSignup"
+      responses:
+        "201":
+          description: User created
+  /api/v1/users/login:
+    post:
+      tags: [Auth]
+      summary: Log in and receive JWT token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserLogin"
+      responses:
+        "200":
+          description: Login successful
+  /api/v1/users/forget-password:
+    post:
+      tags: [Auth]
+      summary: Request password reset email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        "200":
+          description: Reset email sent
+  /api/v1/users/reset-password/{resetToken}:
+    patch:
+      tags: [Auth]
+      summary: Reset password using token
+      parameters:
+        - name: resetToken
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - password
+                - passwordConfirm
+              properties:
+                password:
+                  type: string
+                  format: password
+                passwordConfirm:
+                  type: string
+                  format: password
+      responses:
+        "200":
+          description: Password reset successful
+  /api/v1/users/update-password:
+    patch:
+      tags: [Users]
+      summary: Update current user password
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PasswordUpdate"
+      responses:
+        "200":
+          description: Password updated
+  /api/v1/users/update-me:
+    patch:
+      tags: [Users]
+      summary: Update current user profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+      responses:
+        "200":
+          description: Profile updated
+  /api/v1/users/delete-me:
+    delete:
+      tags: [Users]
+      summary: Delete current user account
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: Account deleted
+  /api/v1/users:
+    get:
+      tags: [Users]
+      summary: Get all users (admin only)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of users
+  /api/v1/users/{id}:
+    get:
+      tags: [Users]
+      summary: Get user by ID (admin only)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User details
+  /api/v1/books:
+    get:
+      tags: [Books]
+      summary: Get all books
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: sort
+          schema:
+            type: string
+        - in: query
+          name: limit
+          schema:
+            type: integer
+        - in: query
+          name: fields
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of books
+    post:
+      tags: [Books]
+      summary: Create new book
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookCreate"
+      responses:
+        "201":
+          description: Book created
+  /api/v1/books/top-recommended:
+    get:
+      tags: [Books]
+      summary: Get top recommended books
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Top books
+  /api/v1/books/least-rated:
+    get:
+      tags: [Books]
+      summary: Get least rated books
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Least rated books
+  /api/v1/books/book-analytics:
+    get:
+      tags: [Books]
+      summary: Get book analytics aggregated by genre
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Analytics data
+  /api/v1/books/popular-themes:
+    get:
+      tags: [Books]
+      summary: Get popular themes across all books
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Popular themes
+  /api/v1/books/{id}:
+    get:
+      tags: [Books]
+      summary: Get single book by ID
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Book details
+    patch:
+      tags: [Books]
+      summary: Update book (admin only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookCreate"
+      responses:
+        "200":
+          description: Book updated
+    delete:
+      tags: [Books]
+      summary: Delete book (admin only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Book deleted
+  /api/v1/books/{bookId}/reviews:
+    get:
+      tags: [Reviews]
+      summary: Get all reviews for a book
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of reviews
+    post:
+      tags: [Reviews]
+      summary: Create review for a book (user only)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReviewCreate"
+      responses:
+        "201":
+          description: Review created
+  /api/v1/books/{bookId}/reviews/{id}:
+    get:
+      tags: [Reviews]
+      summary: Get single review
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Review details
+    patch:
+      tags: [Reviews]
+      summary: Update review
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReviewCreate"
+      responses:
+        "200":
+          description: Review updated
+    delete:
+      tags: [Reviews]
+      summary: Delete review
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Review deleted
+  /api/v1/reviews:
+    get:
+      tags: [Reviews]
+      summary: Get all reviews
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of all reviews
+  /api/v1/authors:
+    get:
+      tags: [Authors]
+      summary: Get all authors
+      responses:
+        "200":
+          description: List of authors
+    post:
+      tags: [Authors]
+      summary: Create new author
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - bio
+              properties:
+                name:
+                  type: string
+                bio:
+                  type: string
+      responses:
+        "201":
+          description: Author created
+  /api/v1/authors/{id}:
+    get:
+      tags: [Authors]
+      summary: Get author by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Author details
+    patch:
+      tags: [Authors]
+      summary: Update author
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                bio:
+                  type: string
+      responses:
+        "200":
+          description: Author updated
+    delete:
+      tags: [Authors]
+      summary: Delete author
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Author deleted
+  /api/v1/movies:
+    get:
+      tags: [Movies]
+      summary: Get all movies
+      responses:
+        "200":
+          description: List of movies
+    post:
+      tags: [Movies]
+      summary: Create new movie
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Movie"
+      responses:
+        "201":
+          description: Movie created
+  /api/v1/movies/{id}:
+    get:
+      tags: [Movies]
+      summary: Get movie by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Movie details
+    patch:
+      tags: [Movies]
+      summary: Update movie
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Movie"
+      responses:
+        "200":
+          description: Movie updated
+    delete:
+      tags: [Movies]
+      summary: Delete movie
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Movie deleted

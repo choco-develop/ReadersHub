@@ -1,0 +1,202 @@
+[
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi / Action",
+    "plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "runtime_minutes": 148,
+    "imdb_rating": 8.8,
+    "release_year": 2010,
+    "key_elements": ["Dreams", "Heist", "Complex Narrative"]
+  },
+  {
+    "title": "The Parasite",
+    "director": "Bong Joon-ho",
+    "genre": "Dark Comedy / Thriller",
+    "plot": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "runtime_minutes": 132,
+    "imdb_rating": 8.5,
+    "release_year": 2019,
+    "key_elements": ["Social Commentary", "Twists", "Class Struggle"]
+  },
+  {
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi / Drama",
+    "plot": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+    "runtime_minutes": 169,
+    "imdb_rating": 8.7,
+    "release_year": 2014,
+    "key_elements": ["Space exploration", "Black holes", "Time dilation"]
+  },
+  {
+    "title": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "genre": "Crime / Drama",
+    "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "runtime_minutes": 175,
+    "imdb_rating": 9.2,
+    "release_year": 1972,
+    "key_elements": ["Mafia", "Family loyalty", "Power"]
+  },
+  {
+    "title": "Everything Everywhere All At Once",
+    "director": "Daniel Kwan & Daniel Scheinert",
+    "genre": "Sci-Fi / Adventure",
+    "plot": "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.",
+    "runtime_minutes": 139,
+    "imdb_rating": 7.8,
+    "release_year": 2022,
+    "key_elements": ["Multiverse", "Family dynamics", "Absurdism"]
+  },
+  {
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "genre": "Action / Crime",
+    "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "runtime_minutes": 152,
+    "imdb_rating": 9.0,
+    "release_year": 2008,
+    "key_elements": ["Chaos", "Moral dilemmas", "Heroism"]
+  },
+  {
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "genre": "Crime / Drama",
+    "plot": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "runtime_minutes": 154,
+    "imdb_rating": 8.9,
+    "release_year": 1994,
+    "key_elements": ["Non-linear narrative", "Dialogue-driven", "Iconic style"]
+  },
+  {
+    "title": "Dune: Part Two",
+    "director": "Denis Villeneuve",
+    "genre": "Sci-Fi / Adventure",
+    "plot": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+    "runtime_minutes": 166,
+    "imdb_rating": 8.6,
+    "release_year": 2024,
+    "key_elements": ["Prophecy", "Desert warfare", "Politics"]
+  },
+  {
+    "title": "Whiplash",
+    "director": "Damien Chazelle",
+    "genre": "Drama / Music",
+    "plot": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
+    "runtime_minutes": 106,
+    "imdb_rating": 8.5,
+    "release_year": 2014,
+    "key_elements": ["Ambition", "Intensity", "Perfectionism"]
+  },
+  {
+    "title": "The Matrix",
+    "director": "The Wachowskis",
+    "genre": "Sci-Fi / Action",
+    "plot": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth—the life he knows is the elaborate deception of an evil cyber-intelligence.",
+    "runtime_minutes": 136,
+    "imdb_rating": 8.7,
+    "release_year": 1999,
+    "key_elements": ["Simulation", "Simulation", "Kung Fu"]
+  },
+  {
+    "title": "Spider-Man: Across the Spider-Verse",
+    "director": "Joaquim Dos Santos",
+    "genre": "Animation / Adventure",
+    "plot": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
+    "runtime_minutes": 140,
+    "imdb_rating": 8.6,
+    "release_year": 2023,
+    "key_elements": ["Visual style", "Identity", "Spider-Men"]
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "genre": "Drama",
+    "plot": "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+    "runtime_minutes": 142,
+    "imdb_rating": 9.3,
+    "release_year": 1994,
+    "key_elements": ["Hope", "Friendship", "Justice"]
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "director": "George Miller",
+    "genre": "Action / Adventure",
+    "plot": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    "runtime_minutes": 120,
+    "imdb_rating": 8.1,
+    "release_year": 2015,
+    "key_elements": ["Car chases", "Post-apocalypse", "Visual storytelling"]
+  },
+  {
+    "title": "Spirited Away",
+    "director": "Hayao Miyazaki",
+    "genre": "Animation / Fantasy",
+    "plot": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches and spirits, and where humans are changed into beasts.",
+    "runtime_minutes": 125,
+    "imdb_rating": 8.6,
+    "release_year": 2001,
+    "key_elements": ["Magic", "Coming-of-age", "Japanese Folklore"]
+  },
+  {
+    "title": "Gladiator",
+    "director": "Ridley Scott",
+    "genre": "Action / Drama",
+    "plot": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "runtime_minutes": 155,
+    "imdb_rating": 8.5,
+    "release_year": 2000,
+    "key_elements": ["Revenge", "Rome", "Honor"]
+  },
+  {
+    "title": "Oppenheimer",
+    "director": "Christopher Nolan",
+    "genre": "Biography / History",
+    "plot": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+    "runtime_minutes": 180,
+    "imdb_rating": 8.3,
+    "release_year": 2023,
+    "key_elements": ["Atomic Age", "Moral guilt", "Politics"]
+  },
+  {
+    "title": "Inglourious Basterds",
+    "director": "Quentin Tarantino",
+    "genre": "War / Adventure",
+    "plot": "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.",
+    "runtime_minutes": 153,
+    "imdb_rating": 8.4,
+    "release_year": 2009,
+    "key_elements": ["Alternate history", "Tension", "Cinema"]
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "director": "Jonathan Demme",
+    "genre": "Crime / Horror",
+    "plot": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.",
+    "runtime_minutes": 118,
+    "imdb_rating": 8.6,
+    "release_year": 1991,
+    "key_elements": ["Psychological warfare", "F.B.I.", "Suspense"]
+  },
+  {
+    "title": "Arrival",
+    "director": "Denis Villeneuve",
+    "genre": "Sci-Fi / Drama",
+    "plot": "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft appear around the world.",
+    "runtime_minutes": 116,
+    "imdb_rating": 7.9,
+    "release_year": 2016,
+    "key_elements": ["Language", "Time", "First contact"]
+  },
+  {
+    "title": "Joker",
+    "director": "Todd Phillips",
+    "genre": "Crime / Drama",
+    "plot": "A mentally troubled comedian is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime.",
+    "runtime_minutes": 122,
+    "imdb_rating": 8.4,
+    "release_year": 2019,
+    "key_elements": ["Mental health", "Isolation", "Chaos"]
+  }
+]

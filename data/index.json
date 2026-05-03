@@ -1,0 +1,182 @@
+[
+  {
+    "title": "The Silent Patient",
+    "writer": "Alex Michaelides",
+    "genre": "Psychological Thriller",
+    "plot": "A famous painter shoots her husband five times in the face and then never speaks another word.",
+    "pages": 336,
+    "rating": 4.18,
+    "keyThemes": ["Obsession", "Trauma", "Silence"]
+  },
+  {
+    "title": "Fourth Wing",
+    "writer": "Rebecca Yarros",
+    "genre": "Fantasy Romance",
+    "plot": "Violet Sorrengail must survive an elite military college for dragon riders where the competition is literally deadly.",
+    "pages": 528,
+    "rating": 4.57,
+    "keyThemes": ["Dragons", "Survival", "Forbidden Love"]
+  },
+  {
+    "title": "The Great Gatsby",
+    "writer": "F. Scott Fitzgerald",
+    "genre": "Classic Literature",
+    "plot": "The story of the mysteriously wealthy Jay Gatsby and his obsessive love for the beautiful Daisy Buchanan.",
+    "pages": 180,
+    "rating": 3.93,
+    "keyThemes": ["American Dream", "Wealth", "Social Class"]
+  },
+  {
+    "title": "Project Hail Mary",
+    "writer": "Andy Weir",
+    "genre": "Science Fiction",
+    "plot": "A lone astronaut must save Earth from an extinction-level event using science, logic, and an unexpected ally.",
+    "pages": 476,
+    "rating": 4.67,
+    "keyThemes": ["Space Travel", "First Contact", "Problem Solving"]
+  },
+  {
+    "title": "Tomorrow, and Tomorrow, and Tomorrow",
+    "writer": "Gabrielle Zevin",
+    "genre": "Contemporary Fiction",
+    "plot": "Two childhood friends become creative partners in the world of video game design over the span of 30 years.",
+    "pages": 416,
+    "rating": 4.19,
+    "keyThemes": ["Gaming", "Friendship", "Creativity"]
+  },
+  {
+    "title": "Lessons in Chemistry",
+    "writer": "Bonnie Garmus",
+    "genre": "Historical Fiction",
+    "plot": "A brilliant chemist in the 1960s becomes the reluctant star of a beloved TV cooking show.",
+    "pages": 400,
+    "rating": 4.30,
+    "keyThemes": ["Feminism", "Science", "Resilience"]
+  },
+  {
+    "title": "The Alchemist",
+    "writer": "Paulo Coelho",
+    "genre": "Quest/Adventure",
+    "plot": "A shepherd boy travels from Spain to Egypt in search of a treasure buried near the Pyramids.",
+    "pages": 208,
+    "rating": 3.90,
+    "keyThemes": ["Destiny", "Dreams", "Spirituality"]
+  },
+  {
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "writer": "Taylor Jenkins Reid",
+    "genre": "Historical Fiction",
+    "plot": "An aging Hollywood icon is finally ready to tell the truth about her glamorous and scandalous life.",
+    "pages": 389,
+    "rating": 4.42,
+    "keyThemes": ["Old Hollywood", "Identity", "Ambition"]
+  },
+  {
+    "title": "1984",
+    "writer": "George Orwell",
+    "genre": "Dystopian",
+    "plot": "A man struggles for individuality in a world where Big Brother is always watching.",
+    "pages": 328,
+    "rating": 4.19,
+    "keyThemes": ["Totalitarianism", "Surveillance", "Language"]
+  },
+  {
+    "title": "Pride and Prejudice",
+    "writer": "Jane Austen",
+    "genre": "Romance / Classic",
+    "plot": "The spirited Elizabeth Bennet navigates issues of manners, upbringing, and marriage in 19th-century England.",
+    "pages": 279,
+    "rating": 4.28,
+    "keyThemes": ["Marriage", "Social Class", "Integrity"]
+  },
+  {
+    "title": "Circe",
+    "writer": "Madeline Miller",
+    "genre": "Mythological Fantasy",
+    "plot": "The banished daughter of Helios finds her power and protects what she loves from gods and monsters.",
+    "pages": 393,
+    "rating": 4.24,
+    "keyThemes": ["Greek Mythology", "Isolation", "Witchcraft"]
+  },
+  {
+    "title": "Atomic Habits",
+    "writer": "James Clear",
+    "genre": "Self-Help / Non-Fiction",
+    "plot": "A proven framework for improving every day by making tiny changes that lead to remarkable results.",
+    "pages": 320,
+    "rating": 4.35,
+    "keyThemes": ["Productivity", "Psychology", "Routine"]
+  },
+  {
+    "title": "A Court of Thorns and Roses",
+    "writer": "Sarah J. Maas",
+    "genre": "Fantasy Romance",
+    "plot": "A huntress is dragged into a magical kingdom for killing a wolf and discovers a world of faeries and danger.",
+    "pages": 416,
+    "rating": 4.19,
+    "keyThemes": ["High Fantasy", "Magic", "Romantasy"]
+  },
+  {
+    "title": "The Housemaid",
+    "writer": "Freida McFadden",
+    "genre": "Psychological Thriller",
+    "plot": "A woman with a dark past takes a job as a housemaid for a wealthy family, only to find the wife is unstable.",
+    "pages": 326,
+    "rating": 4.34,
+    "keyThemes": ["Twists", "Deception", "Domestic Suspense"]
+  },
+  {
+    "title": "Where the Crawdads Sing",
+    "writer": "Delia Owens",
+    "genre": "Historical Mystery",
+    "plot": "The 'Marsh Girl' of North Carolina becomes the prime suspect in the murder of a local golden boy.",
+    "pages": 368,
+    "rating": 4.43,
+    "keyThemes": ["Nature", "Loneliness", "Coming-of-Age"]
+  },
+  {
+    "title": "Daisy Jones & The Six",
+    "writer": "Taylor Jenkins Reid",
+    "genre": "Contemporary Fiction",
+    "plot": "An oral history of the rise and fall of a legendary 1970s rock band.",
+    "pages": 355,
+    "rating": 4.17,
+    "keyThemes": ["Music", "Addiction", "Stardom"]
+  },
+  {
+    "title": "Normal People",
+    "writer": "Sally Rooney",
+    "genre": "Literary Fiction",
+    "plot": "The complex, evolving relationship between Marianne and Connell as they move from school to university.",
+    "pages": 273,
+    "rating": 3.82,
+    "keyThemes": ["Intimacy", "Class", "Mental Health"]
+  },
+  {
+    "title": "The Book Thief",
+    "writer": "Markus Zusak",
+    "genre": "Historical Fiction",
+    "plot": "Death narrates the story of a young girl living in Nazi Germany who finds solace in stealing books.",
+    "pages": 552,
+    "rating": 4.39,
+    "keyThemes": ["WWII", "Mortality", "Power of Words"]
+  },
+  {
+    "title": "Dark Matter",
+    "writer": "Blake Crouch",
+    "genre": "Sci-Fi Thriller",
+    "plot": "A physics professor is kidnapped and wakes up in a reality where his life has taken a completely different path.",
+    "pages": 342,
+    "rating": 4.13,
+    "keyThemes": ["Multiverse", "Choices", "Identity"]
+  },
+  {
+    "title": "The Song of Achilles",
+    "writer": "Madeline Miller",
+    "genre": "Mythological Romance",
+    "plot": "A reimagining of the Iliad focusing on the deep relationship between Patroclus and Achilles.",
+    "pages": 378,
+    "rating": 4.32,
+    "keyThemes": ["Heroism", "Fate", "Legend"]
+  }
+]

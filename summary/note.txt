@@ -1,0 +1,46 @@
+ console.log(req.query);
+    let params = Books.find();
+    // FILTER
+
+    const queryObj = { ...req.query };
+    const extendedFilter = ["fields", "sort", "page", "limit"];
+    extendedFilter.forEach((element) => delete queryObj[element]);
+
+    //Example of expected request format ?rating[gte]=4.0
+    let queryStr = JSON.stringify(queryObj);
+    queryStr = queryStr.replace(/\b(gte|gt|lt|lte)\b/g, (el) => `$${el}`);
+    queryStr = JSON.parse(queryStr);
+    params = params.find(queryStr);
+
+    // const allBooks = await Books.find(queryStr);
+
+    //  SORT
+
+    if (req.query.sort) {
+      // expectation that only one sort criteria will be added
+      // const sortBy = req.query.sort;
+      // But when users might want to break ties if they exist so 2 parametrrs are allowed...but we cannot send a , into our mongoose qery...so we strip the ,
+      const sortBy = req.query.sort.split(",").join(" ");
+      params = params.sort(sortBy);
+    } else {
+      params = params.sort("-_id");
+    }
+
+    // LIMIT_FIELDS
+    if (req.query.fields) {
+      const limit = req.query.fields.split(",").join(" ");
+      params = params.select(limit);
+    } else {
+      params = params.select("-__v");
+    }
+
+    //PAGINATION
+
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 10;
+    const skip = (page - 1) * limit;
+
+    params = params.skip(skip).limit(limit);
+
+    const allBooks = await params;
+    res.status(200).json({})
