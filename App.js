@@ -56,12 +56,15 @@ const globalLimiter = rateLimit({
 });
 app.use("/api", globalLimiter);
 
-// Swagger UI
-app.use("/api-docs", swaggerUi.serve);
-app.get(
+// SWAGGER UI route handling
+
+app.use(
   "/api-docs",
+  swaggerUi.serve,
   swaggerUi.setup(swaggerSpec, {
-    swaggerOptions: { persistAuthorization: true },
+    swaggerOptions: {
+      persistAuthorization: true,
+    },
   }),
 );
 
