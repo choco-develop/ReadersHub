@@ -8,7 +8,9 @@ const app = require("./App");
 const port = process.env.PORT;
 const DB = process.env.DATABASE.replace("<db_password>", process.env.PASSWORD);
 
-mongoose.connect(DB).then(() => console.log("DB connected successfully"));
+mongoose
+  .connect(DB)
+  .then(() => console.log(`DB connected successfully ${process.env.DATABASE}`));
 
 const server = app.listen(port, console.log(`Listening at ${port}`));
 process.on("unhandledRejection", (err) => {
