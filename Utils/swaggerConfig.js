@@ -12,8 +12,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:8000",
-        description: "Development server",
+        url: process.env.SWAGGER_BASE_URL || "/",
+        description: "API base URL (uses UI origin when unset)",
       },
     ],
     components: {

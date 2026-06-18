@@ -56,7 +56,7 @@ const globalLimiter = rateLimit({
 });
 app.use("/api", globalLimiter);
 
-// SWAGGER UI route handling
+// SWAGGER UI route
 
 app.use(
   "/api-docs",
