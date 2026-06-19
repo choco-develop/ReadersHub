@@ -14,8 +14,6 @@ router
   .get(bookController.getAllBooks)
   .post(bookController.addBookId, bookController.createBook);
 
-router.get("/:id", bookController.getBook);
-
 router
   .route("/top-recommended")
   .get(bookController.aliasTopRecommended, bookController.getAllBooks);
@@ -30,6 +28,7 @@ router.use(authController.restrictedTo("admin"));
 
 router
   .route("/:id")
+  .get(bookController.getBook)
   .patch(bookController.updateBook)
   .delete(bookController.deleteBook);
 
